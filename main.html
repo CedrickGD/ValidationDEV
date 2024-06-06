@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="sitelogo.png" type="image/png">
+    <title>ValidationDEV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home" class="nav-link" data-target="home">Home</a></li>
+                <li><a href="#pwgen" class="nav-link" data-target="pwgen">PWgen</a></li>
+                <li><a href="#Gedone-Installer" class="nav-link" data-target="Gedone-Installer">Gedone-Installer</a></li>
+                <li><a href="#Placeholder" class="nav-link" data-target="Placeholder">Placeholder</a></li>
+                <li><button id="theme-toggle">Toggle Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="content-section active">
+            <h1>Home</h1>
+            <div class="card-container">
+                <!-- Placeholder Card -->
+                <div class="card" onclick="switchToPasswordGenerator()">
+                    <div class="card-inner">
+                        <h2>Password Generator</h2>
+                        <h2>-----------------</h2>
+                        <p>Generate secure passwords with ease.</p>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+                <div class="card" onclick="switchToGD_Installer()">
+                    <div class="card-inner">
+                        <h2>Gedone Installer</h2>
+                        <h2>-----------------</h2>
+                        <p>Quality of Life Maker's.</p>
+                    </div>
+                </div>
+                <!--End of one card -->
+                <div class="card" onclick="switchToPlaceholder()">
+                    <div class="card-inner">
+                        <h2>Placeholder Card</h2>
+                        <h2>-----------------</h2>
+                        <p>Example Description.</p>
+                    </div>
+                </div>
+        </section>
+        
+        <section id="pwgen" class="content-section">
+            <div class="generator-container">
+                <h1>Password Generator</h1>
+                <label for="length">Password Length: <span id="lengthDisplay">12</span></label>
+                <input type="range" id="length" min="8" max="20" value="12" onchange="updateLengthDisplay(this.value)">
+                <br>
+                <label class="radio-label"><input type="radio" name="complexity" value="easy" checked> Easy (Letters)</label>
+                <label class="radio-label"><input type="radio" name="complexity" value="mid"> Medium (Letters & Numbers)</label>
+                <label class="radio-label"><input type="radio" name="complexity" value="complex"> Complex (All Characters)</label>
+                <br>
+                <button onclick="generatePassword()">Generate Password</button>
+                <button onclick="copyPassword()">Copy Password</button>
+                <p id="passwordDisplay"></p>
+                <div id="copyNotification" class="copy-notification"></div>
+            </div>
+        </section>             
+        
+        <section id="Gedone-Installer" class="content-section">
+            <div class="installer-container">
+                <div class="installer-image">
+                    <img src="r.jpg" alt="Rust Image">
+                </div>
+                <div class="installer-content">
+                    <h1>Gedone Installer</h1>
+                    <p>Description On Page.</p>
+                    <button id="downloadButton">Download Installer</button>
+                </div>
+                <div class="installer-image">
+                    <img src="a.jpg" alt="ARK: Survival Evolved Image">
+                </div>
+            </div>
+        </section>
+
+        <section id="Placeholder" class="content-section">
+            <h1>Tab 2</h1>
+            <p>Content for Tab 2.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="downloader.js"></script>
+</body>
+</html>
